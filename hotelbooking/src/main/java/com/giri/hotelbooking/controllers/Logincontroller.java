@@ -27,6 +27,11 @@ public class Logincontroller {
         return "login"; 
     }
 
+    @GetMapping("/hotel_list")
+    public String loadHotelList() {
+        return "hotel_list";
+    }
+
     // @PostMapping("/login")
     // public String postMethodName(@RequestBody String entity) {
     //     return entity;

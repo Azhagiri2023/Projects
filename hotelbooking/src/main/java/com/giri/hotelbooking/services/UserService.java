@@ -17,7 +17,14 @@ public class UserService {
 
     public User register(User user) {
         user.setPassword(encoder.encode(user.getPassword()));
-        user.setRole("USER");
+        if (user.getName() == "ADMIN") {
+            user.setRole("ADMIN");
+        }
+        else {
+            user.setRole("USER");
+        }
+        
+
         System.out.println("service level user name " + user.getName());
         System.out.println("service level user email " + user.getEmail());
         System.out.println("service level user password " + user.getPassword());

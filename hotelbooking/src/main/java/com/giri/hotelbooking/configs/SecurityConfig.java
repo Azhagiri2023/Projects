@@ -34,8 +34,10 @@ public class SecurityConfig {
             )
             .formLogin(form -> form
                 .loginPage("/login")
+                .usernameParameter("email")
+                .passwordParameter("password")
                 .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/home", true)
+                .defaultSuccessUrl("/hotel_list", true)
                 .permitAll()
             )
             .logout(logout -> logout
